@@ -1,0 +1,209 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #46178f 0%, #881c7e 100%);
+  color: white;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Landing */
+.landing h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.buttons button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background: white;
+  color: #46178f;
+  font-weight: bold;
+  box-shadow: 0 4px 0 #ccc;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.buttons button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+/* Host Lobby */
+.pin-display {
+  background: white;
+  color: #333;
+  padding: 20px 40px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.pin-number {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.players-list ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.players-list li {
+  background: rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+/* Player Join */
+.player-join input {
+  display: block;
+  margin: 10px auto;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
+  text-align: center;
+}
+
+.player-join button {
+  width: 300px;
+  background: #333;
+  color: white;
+  margin-top: 10px;
+}
+
+/* Game Screen */
+.question-header {
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.question-header h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.option-card {
+  padding: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+}
+
+.option-0 { background-color: #e21b3c; } /* Red */
+.option-1 { background-color: #1368ce; } /* Blue */
+.option-2 { background-color: #d89e00; } /* Yellow */
+.option-3 { background-color: #26890c; } /* Green */
+
+/* Player Controller */
+.controller-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  height: 60vh;
+  width: 100%;
+}
+
+.btn-shape {
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-shape.red { background-color: #e21b3c; }
+.btn-shape.blue { background-color: #1368ce; }
+.btn-shape.yellow { background-color: #d89e00; }
+.btn-shape.green { background-color: #26890c; }
+
+.btn-shape:active {
+  opacity: 0.8;
+}
