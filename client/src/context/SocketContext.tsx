@@ -11,7 +11,9 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const [socket, setSocket] = useState<Socket | null>(null);
 
     useEffect(() => {
-        const newSocket = io('http://localhost:3000'); // Hardcoded for now
+        // In production, use the environment variable. In dev, default to localhost:3000
+        const serverUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:3000';
+        const newSocket = io(serverUrl);
         setSocket(newSocket);
 
         return () => {
